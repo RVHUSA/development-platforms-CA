@@ -1,0 +1,31 @@
+#message {
+  display: none;
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  text-align: left;
+  text-align: center;
+}
+
+/* Error message */
+#message.error {
+  display: block;
+  background-color: #fff1f0;
+  border: 1px solid #f3c4c0;
+  color: #a33a32;
+  text-align: center;
+}
+
+/* Success message */
+#message.success {
+  display: block;
+  background-color: #eef7f0;
+  border: 1px solid #c6dfcb;
+  color: #356642;
+  text-align: center;
+}
+
+#message:empty {
+  display: none;
+}

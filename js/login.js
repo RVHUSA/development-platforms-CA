@@ -20,6 +20,7 @@ loginForm.addEventListener("submit", async function (e) {
 
     if (error) {
       message.textContent = error.message;
+      message.className = "error";
       return;
     }
 
@@ -28,6 +29,7 @@ loginForm.addEventListener("submit", async function (e) {
     }
   } catch (error) {
     message.textContent = "Something went wrong. Please try again.";
+    message.className = "error";
     console.error(error);
   }
 });

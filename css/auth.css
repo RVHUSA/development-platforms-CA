@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  background-color: #eef5ff;
+  color: #102a43;
+}
+
+main {
+  width: 100%;
+  max-width: 390px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 5vw, 2.4rem);
+  color: #0f2f57;
+}
+
+.subtitle {
+  margin: 0 auto 1.5rem;
+  max-width: 320px;
+  color: #52657a;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+form {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(30, 64, 110, 0.1);
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid #d4dde8;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  border-color: #7aa7d9;
+  box-shadow: 0 0 0 3px rgba(122, 167, 217, 0.18);
+}
+
+button {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #e56f43;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #d95f35;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.auth-link {
+  margin-top: 1.2rem;
+  color: #52657a;
+  font-size: 0.95rem;
+}
+
+a {
+  color: #d95f35;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  body {
+    align-items: flex-start;
+    padding: 2rem 1rem;
+  }
+
+  main {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    margin-bottom: 1.25rem;
+  }
+
+  form {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+}

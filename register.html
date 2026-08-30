@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
+    <link rel="stylesheet" href="./css/auth.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <main>
-      <h1>Register</h1>
+      <h1>Share your ideas</h1>
+
+      <p class="subtitle">
+        Create an account to publish articles and join the community.
+      </p>
+
       <form id="register-form">
-        <div>
+        <div class="form-group">
           <label for="email">Email</label>
           <input
             type="email"
             id="email"
             name="email"
+            placeholder="you@example.com"
             required
           />
         </div>
-        <div>
+
+        <div class="form-group">
           <label for="password">Password</label>
           <input
             type="password"
             id="password"
             name="password"
+            placeholder="••••••••"
             required
           />
         </div>
+
         <button type="submit">Register</button>
       </form>
-      <p id="message"></p>
-      <p>
+
+      <p class="auth-link">
         Already have an account?
         <a href="./login.html">Login</a>
       </p>
+      <p id="message"></p>
     </main>
+
     <script type="module" src="./js/register.js"></script>
   </body>
 </html>
