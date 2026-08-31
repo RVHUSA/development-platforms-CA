@@ -6,17 +6,19 @@ const session = await requireAuth();
 const userId = session.user.id;
 
 const articleForm = document.querySelector("#article-form");
+const articlesContainer = document.querySelector("#articles-container");
 const message = document.querySelector("#message");
 const logoutButton = document.querySelector("#logout-button");
 
 // Load articles when the page opens
-loadArticles();
+await loadArticles();
 
 // Create a new article
 articleForm.addEventListener("submit", async function (e) {
   e.preventDefault();
 
   const form = e.target;
+
   const title = form.title.value.trim();
   const body = form.body.value.trim();
   const category = form.category.value.trim();
@@ -43,7 +45,7 @@ articleForm.addEventListener("submit", async function (e) {
     form.reset();
 
     // Refresh articles after creating a new one
-    loadArticles();
+    await loadArticles();
   } catch (error) {
     message.textContent = "Something went wrong. Please try again.";
     message.className = "error";
@@ -53,8 +55,7 @@ articleForm.addEventListener("submit", async function (e) {
 
 // Load articles from Supabase
 async function loadArticles() {
-  const articleForm = document.querySelector("#article-form");
-  articleForm.innerHTML = "";
+  articlesContainer.innerHTML = "";
 
   try {
     const { data: articles, error } = await supabase
@@ -69,13 +70,13 @@ async function loadArticles() {
     }
 
     if (!articles || articles.length === 0) {
-      articleForm.textContent = "No articles yet.";
+      articlesContainer.textContent = "No articles yet.";
       return;
     }
 
     articles.forEach((article) => {
       const articleElement = createArticleElement(article);
-      articleForm.appendChild(articleElement);
+      articlesContainer.appendChild(articleElement);
     });
   } catch (error) {
     console.error(error);
