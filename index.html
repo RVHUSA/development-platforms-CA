@@ -5,14 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Articles</title>
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./auth/styles.css" />
   </head>
 
   <body>
     <main>
-      <h1>Articles</h1>
+      <section>
+        <h1>Articles</h1>
+        <p>Create and share articles with the community.</p>
+        <button id="logout-button">Log out</button>
+      </section>
 
-      <button id="logout-button">Log out</button>
+      <section>
+        <h2>Create article</h2>
+
+        <form id="article-form">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required />
+          </div>
+
+          <div class="form-group">
+            <label for="body">Content</label>
+            <textarea id="body" name="body" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+              <option value="" disabled selected>Select a category</option>
+              <option value="Technology">Technology</option>
+              <option value="Lifestyle">Lifestyle</option>
+              <option value="Travel">Travel</option>
+              <option value="Health">Health</option>
+              <option value="Sports">Sports</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <button type="submit">Publish article</button>
+        </form>
+        <p id="message"></p>
+      </section>
+
+      <section>
+        <h2>Latest articles</h2>
+        <div id="articles-container"></div>
+      </section>
     </main>
 
     <script type="module" src="./js/posts.js"></script>
