@@ -1,5 +1,13 @@
 /* Base */
 
+.logo {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+}
+
 * {
   box-sizing: border-box;
 }
