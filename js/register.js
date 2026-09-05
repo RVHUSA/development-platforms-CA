@@ -8,6 +8,8 @@ registerForm.addEventListener("submit", async function (e) {
   e.preventDefault();
 
   const form = e.target;
+
+  const username = form.username.value.trim();
   const email = form.email.value.trim();
   const password = form.password.value;
 
@@ -16,6 +18,11 @@ registerForm.addEventListener("submit", async function (e) {
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
+      options: {
+        data: {
+          username: username,
+        },
+      },
     });
 
     if (error) {

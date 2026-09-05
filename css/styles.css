@@ -166,7 +166,8 @@ button:active {
   font-weight: 600;
 }
 
-.article-date {
+.article-date,
+.article-author {
   font-size: 0.85rem;
   color: #52657a;
 }

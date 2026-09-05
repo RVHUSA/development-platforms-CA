@@ -85,7 +85,14 @@ async function loadArticles() {
   try {
     const { data: articles, error } = await supabase
       .from("articles")
-      .select("*")
+      .select(
+        `
+        *,
+        profiles (
+          username
+        )
+      `
+      )
       .order("created_at", { ascending: false });
 
     if (error) {
@@ -122,6 +129,10 @@ function createArticleElement(article) {
   category.textContent = article.category;
   category.classList.add("article-category");
 
+  const author = document.createElement("p");
+  author.textContent = `Created by: ${article.profiles.username}`;
+  author.classList.add("article-author");
+
   const date = document.createElement("p");
   date.textContent =
     "Created: " + new Date(article.created_at).toLocaleDateString("en-GB");
@@ -130,6 +141,7 @@ function createArticleElement(article) {
   articleElement.appendChild(heading);
   articleElement.appendChild(body);
   articleElement.appendChild(category);
+  articleElement.appendChild(author);
   articleElement.appendChild(date);
 
   return articleElement;
