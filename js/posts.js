@@ -124,6 +124,7 @@ function createArticleElement(article) {
 
   const body = document.createElement("p");
   body.textContent = article.body;
+  body.classList.add("article-content");
 
   const category = document.createElement("p");
   category.textContent = article.category;
