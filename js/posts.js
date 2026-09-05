@@ -120,10 +120,17 @@ function createArticleElement(article) {
 
   const category = document.createElement("p");
   category.textContent = article.category;
+  category.classList.add("article-category");
+
+  const date = document.createElement("p");
+  date.textContent =
+    "Created: " + new Date(article.created_at).toLocaleDateString("en-GB");
+  date.classList.add("article-date");
 
   articleElement.appendChild(heading);
   articleElement.appendChild(body);
   articleElement.appendChild(category);
+  articleElement.appendChild(date);
 
   return articleElement;
 }

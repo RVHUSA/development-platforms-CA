@@ -155,13 +155,7 @@ button:active {
   font-size: 1.2rem;
 }
 
-#articles-container article p {
-  margin: 0 0 0.75rem;
-  color: #52657a;
-  line-height: 1.5;
-}
-
-#articles-container article p:last-child {
+.article-category {
   display: inline-block;
   margin-bottom: 0;
   padding: 0.3rem 0.65rem;
@@ -170,6 +164,11 @@ button:active {
   color: #d95f35;
   font-size: 0.85rem;
   font-weight: 600;
+}
+
+.article-date {
+  font-size: 0.85rem;
+  color: #52657a;
 }
 
 /* Navigation */
