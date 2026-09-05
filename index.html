@@ -4,18 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Articles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
   <body>
+    <nav>
+      <a href="./index.html">
+        <img src="./images/drafted-logo.png" alt="Drafted logo" class="logo" />
+      </a>
+
+      <button
+        id="menu-button"
+        class="menu-button"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div id="nav-menu">
+        <div class="nav-links">
+          <a href="./index.html">Articles</a>
+          <a href="#">Categories</a>
+          <a href="#">About</a>
+        </div>
+
+        <div id="guest-links">
+          <a href="./login.html">Log in</a>
+          <a href="./register.html">Register</a>
+        </div>
+
+        <div id="user-links">
+          <button id="logout-button">Log out</button>
+        </div>
+      </div>
+    </nav>
+
     <main>
       <section>
         <h1>Articles</h1>
         <p>Create and share articles with the community.</p>
-        <button id="logout-button">Log out</button>
       </section>
 
-      <section>
+      <section id="create-article">
         <h2>Create article</h2>
 
         <form id="article-form">

@@ -1,14 +1,39 @@
 import { supabase } from "./supabase.js";
-import { requireAuth, logout } from "./auth.js";
+import { logout } from "./auth.js";
 
 // Check authentication when the page loads (if the user is logged in)
-const session = await requireAuth();
-const userId = session.user.id;
+const {
+  data: { session },
+} = await supabase.auth.getSession();
 
 const articleForm = document.querySelector("#article-form");
+const createArticle = document.querySelector("#create-article");
 const articlesContainer = document.querySelector("#articles-container");
 const message = document.querySelector("#message");
 const logoutButton = document.querySelector("#logout-button");
+const guestLinks = document.querySelector("#guest-links");
+const userLinks = document.querySelector("#user-links");
+const menuButton = document.querySelector("#menu-button");
+const navMenu = document.querySelector("#nav-menu");
+
+// Show or hide elements based on authentication status
+if (session) {
+  guestLinks.style.display = "none";
+  userLinks.style.display = "flex";
+  createArticle.style.display = "block";
+} else {
+  guestLinks.style.display = "flex";
+  userLinks.style.display = "none";
+  createArticle.style.display = "none";
+}
+
+// Toggle mobile navigation
+menuButton.addEventListener("click", function () {
+  navMenu.classList.toggle("open");
+
+  const isOpen = navMenu.classList.contains("open");
+  menuButton.setAttribute("aria-expanded", isOpen);
+});
 
 // Load articles when the page opens
 await loadArticles();
@@ -29,7 +54,7 @@ articleForm.addEventListener("submit", async function (e) {
         title,
         body,
         category,
-        user_id: userId,
+        user_id: session.user.id,
       },
     ]);
 
@@ -104,4 +129,6 @@ function createArticleElement(article) {
 }
 
 // Handle logout
-logoutButton.addEventListener("click", logout);
+if (logoutButton) {
+  logoutButton.addEventListener("click", logout);
+}
