@@ -4,10 +4,14 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: #fffaf6;
+  overscroll-behavior-y: none;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
-  padding: 2rem 1rem;
   font-family: Arial, sans-serif;
   background-color: #eef5ff;
   color: #102a43;
@@ -17,6 +21,7 @@ main {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
 /* Typography */
@@ -167,10 +172,133 @@ button:active {
   font-weight: 600;
 }
 
+/* Navigation */
+
+.logo {
+  width: 140px;
+  height: auto;
+  display: block;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #fffaf6;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+#nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+#guest-links,
+#user-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav a {
+  color: #d95f35;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #333;
+}
+
+#logout-button {
+  padding: 0.5rem 1rem;
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+  min-height: auto;
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #e56f43;
+  border-radius: 2px;
+}
+
+.menu-button:hover {
+  background: none;
+}
+
 /* Responsive */
 
+@media (max-width: 600px) {
+  nav {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  #nav-menu {
+    display: none;
+    width: 100%;
+  }
+
+  #nav-menu.open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+
+  .nav-links {
+    position: static;
+    transform: none;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  #guest-links,
+  #user-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 480px) {
-  body {
+  main {
     padding: 1.5rem 1rem;
   }
 
