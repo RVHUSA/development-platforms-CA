@@ -32,18 +32,13 @@ main {
 
 /* Typography */
 
-h1 {
-  margin: 0 0 0.5rem;
-  font-size: clamp(2rem, 5vw, 2.4rem);
-  color: #0f2f57;
-}
-
 .subtitle {
   margin: 0 auto 1.5rem;
   max-width: 320px;
   color: #52657a;
   line-height: 1.5;
   font-size: 0.95rem;
+  text-align: center;
 }
 
 /* Form */
