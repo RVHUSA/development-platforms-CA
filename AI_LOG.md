@@ -27,3 +27,8 @@ Tool used: ChatGPT
 Date: 5 September 2026
 Purpose: Asked ChatGPT how to fix the navigation links not being properly centered.
 Outcome: Learned how to use transform: translate(-50%) together with left: 50% to position the navigation links more accurately.
+
+Tool used: ChatGPT
+Date: 6 September 2026
+Purpose: Asked ChatGPT to create short example article content for different categories, including sports, health and travel.
+Outcome: Used the generated texts as example content to test and display articles on the website.
